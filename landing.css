@@ -3,10 +3,18 @@
 
 /*Home button div*/
 .topright {
-  position: absolute;
+  position: fixed;
   top: 8px;
   right: 16px;
   font-size: 18px;
+}
+
+.header_land {
+  padding:100px;
+  text-align: center;
+  background-image: url(resources/home_header.jpeg);
+  background-size: cover;
+  color: white;
 }
 
 /*home page animation*/
@@ -14,17 +22,44 @@
   transition: 0.3s background-color ease;
 }
 
+/*containers used for columns*/
+.grid-container {
+  display: grid;
+  grid-template-columns: 50% auto;
+  column-gap: 50px;background-color: #2196F3;
+  padding:10px;
+}
 
+.grid-container-home {
+  display: grid;
+  grid-template-columns: 20% 50% auto;
+  column-gap: 50px;
+  padding:10px;
+}
+
+.grid-container-mapping {
+  display: grid;
+  grid-template-columns: 65% auto;
+  column-gap: 50px;background-color: #2196F3;
+  padding:5px;
+}
+
+.centre {
+  text-align: center;
+  position: relative;
+}
 
 /* Full-width input fields */
+
 input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
   
   /* Set a style for all buttons */
   button {
@@ -92,21 +127,7 @@ input[type=text], input[type=password] {
     width: 80%; /* Could be more or less, depending on screen size */
   }
   
-  /* The Close Button (x) */
-  .close {
-    position: absolute;
-    right: 25px;
-    top: 0;
-    color: #000;
-    font-size: 35px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: red;
-    cursor: pointer;
-  }
+
   
   /* Add Zoom Animation */
   .animate {
@@ -136,45 +157,20 @@ input[type=text], input[type=password] {
   }
 
 
-/*sing up */
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    display: inline-block;
-    border: none;
-    background: #f1f1f1;
-  }
-  
+
   /* Add a background color when the inputs get focus */
   input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
   }
-  
-  button:hover {
-    opacity:1;
-  }
-  
-  /* Extra styles for the cancel button */
-  .cancelbtn {
-    padding: 14px 20px;
-    background-color: #f44336;
-  }
-  
-  /* Float cancel and signup buttons and add an equal width */
-  .cancelbtn, .signupbtn {
-    float: left;
-    width: 50%;
-  }
-  
+
   /* Add padding to container elements */
   .container {
     padding: 16px;
   }
   
   /* The Modal (background) */
-  .modal {
+  .modal-signup {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
@@ -188,7 +184,7 @@ input[type=text], input[type=password] {
   }
   
   /* Modal Content/Box */
-  .modal-content {
+  .modal-content-signup {
     background-color: #fefefe;
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
@@ -216,7 +212,7 @@ input[type=text], input[type=password] {
     color: #f44336;
     cursor: pointer;
   }
-  
+
   /* Clear floats */
   .clearfix::after {
     content: "";

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<link rel="stylesheet" href="landing.css">
+<title>Welcome Traveller</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<style>
+body {
+background-color: green;
+}  
+
+
+</style>
+
+<body>
+<header>
+<div class="topright">
+    <a href="home_page.html">
+    <img src="resources/home_button.png" alt="Home line">
+    </a>
+</div>
+
+<div class="header_land">
+<div class="imgcontainer">
+<h1 style="color: chocolate;">Mapping</h1>
+<canvas id="myCanvas" width="800px" height="auto"style="border:3px solid black;">
+</canvas>
+</div>
+</div>
+<script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");
+  ctx.font = "30px Algerian";
+  ctx.fillStyle = "black";
+  ctx.textAlign = "center";
+  ctx.fillText("Use the map to plan where you want to go", canvas.width/2, canvas.height/2);
+</script>
+</header>
+ 
+
+<div class="grid-container-mapping">
+<div class="centre">
+<div class="item1">
+  
+  <h1>Planning map</h1>
+ 
+  <div id="googleMap" style="width:100%;height:600px;"></div>
+  </div>
+  </div>
+<!-- prop-->
+
+<div class="item2">
+  <h2>Start planing your trip below</h2>
+  <div id="inputs2">
+    <template>
+        <span>Enter what places you'd like to go next:</span>
+        <p style="white-space: pre-line;"> {{ message }}</p>
+        <textarea v-model="message" placeholder="add multiple places"></textarea>
+    </template>
+  </div>
+</div>
+</div>
+<script src="app.js"></script>
+<script>
+function myMap() {
+var mapProp= {
+  center:new google.maps.LatLng(-37.77862,144.96944),
+  zoom:4,
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+}
+</script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWrBK9pOqdVcfKaxHGcRqSHyUGiwXtEos&callback=myMap"></script>
+
+<footer>
+ 
+</footer>
+</body>
+</html>

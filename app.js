@@ -15,19 +15,17 @@ new Vue({
           message: '',          
       }
   },
-methods: {
-
-},
-computed: {
-
-}
 });
 
 new Vue({
-  el:"#prop",
-  
-
-})
+  el: "#inputs2",
+  data() {
+      return {
+          message: '',    
+                
+      }
+  },
+});
 
 const Child = {
   template: '#childarea'
