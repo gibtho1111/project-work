@@ -17,11 +17,48 @@
 
 </style>
 <body>
+<header>
+    <div class="topright">
+        <a href="home_page.html">
+        <img src="resources/home_button.png" alt="Home line">
+        </a>
+</div>
+
 <div class="header_land">
 <h1>Welcome to Trip planner</h1>
 <h3>Home of planning your next exploration</h3>
 </div>
+</header>
 
+<div class="grid-container-mapping">
+    <div class="item1">
+    <h2>Create your personal Itinerary below:</h2>
+    <div id="todo-list">
+        <form v-on:submit.prevent="addNewTodo">
+          <label for="new-todo">Add a todo</label>
+          <input
+            v-model="newTodoText"
+            id="new-todo"
+            placeholder="E.g. day 1: drive to Sydney"
+          >
+          <button>Add</button>
+        </form>
+        <ul>
+          <li
+            is="todo-item"
+            v-for="(todo, index) in todos"
+            v-bind:key="todo.id"
+            v-bind:title="todo.title"
+            v-on:remove="todos.splice(index, 1)"
+          ></li>
+        </ul>
+      </div>
+      </div>
+      <div>
+        <h2> hope you enjoy the experience! </h2>
+      </div>
+
+</div>
 
 
 
