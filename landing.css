@@ -1,3 +1,21 @@
+
+/*CSS used on every page*/
+
+/*Home button div*/
+.topright {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+  font-size: 18px;
+}
+
+/*home page animation*/
+.movearea {
+  transition: 0.3s background-color ease;
+}
+
+
+
 /* Full-width input fields */
 input[type=text], input[type=password] {
     width: 100%;
@@ -132,18 +150,6 @@ input[type=text], input[type=password] {
   input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
-  }
-  
-  /* Set a style for all buttons */
-  button {
-    background-color: #04AA6D;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
   }
   
   button:hover {

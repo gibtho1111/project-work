@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="landing.css">
+<title>Landing page</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<style>
+.header_land {
+  padding:200px;
+  text-align: center;
+  background-image: url(resources/home_header.jpeg);
+  background-size: cover;
+  color: white;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% 50% auto;
+  column-gap: 50px;
+  padding:10px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #f1f1f1;
+}
+
+li a {
+  display: block;
+  color: #000;
+  padding: 8px 16px;
+  text-decoration: none;
+}
+
+li a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+li a:hover:not(.active) {
+  background-color: #555;
+  color: white;
+}
+
+#app {
+  text-align: center;
+  margin: 60px;
+  max-width: 370px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+button2 {
+  font-family: 'Roboto Mono';
+  border: 2px solid black;
+  background: white;
+  padding: 10px 15px;
+  margin: 0 10px;
+  outline: 0;
+  width: 60%;
+  cursor: pointer;
+}
+
+h4 {
+  margin: 0 0 15px;
+}
+
+.modal2 {
+  background: cyan;
+  color: black;
+  padding: 20px;
+  width: 200px;
+  position: absolute;
+}
+</style>
+<body>
+<div class="topright">
+    <a href="home_page.html">
+    <img src="resources/home_button.png" alt="Home line">
+    </a>
+</div>
+
+<div class="header_land">
+    <h1>Trip planner home page</h1>
+    <h3>Home of our site</h3>
+</div>
+
+<div class="grid-container">
+    <div class="item1">
+    <p>Menu</p>
+    <ul class="vertical ex">
+      <li><a class="active" href="javascript:void(0)">Mapping</a></li>
+      <li><a class="active" href="javascript:void(0)">Itinerary</a></li>
+      <li><a class="active" href="javascript:void(0)">Community</a></li>
+      <li><a class="active" href="javascript:void(0)">Update your account</a></li>
+    </ul>
+    </div>
+    
+    <div class="item2">  
+        <h3>What would you like to do next?</h3>
+        <p> On the left we have our navigation menu, first off the bat we have Mapping where you can go to plan your next trip
+            and see where'd you would like to go</p>
+        <p>Underneath that we have Itinerary where you can plan a trip day to day and enter in where and what you want to do.</p>
+        <p>Next we have community where you can go to look for inspiration for future trips!</p>
+        <p>Lastly we have an account page where you can go change and check your account details</p>
+
+        </div>
+    <!--registration and condition rendering -->
+    <div class="item3">
+        <div id="app">
+            <h3>Let's trigger this here modal!</h3>
+            <button2 @click="toggleShow">
+              <span v-if="isShowing">Hide child</span>
+              <span v-else>Show child</span>
+            </button2>
+            <app-child v-if="isShowing" class="modal2">
+              <button2 @click="toggleShow">
+                Close
+              </button2>
+            </app-child>
+        </div>
+        <script type="text/x-template" id="childarea">
+            <div>
+              <h2>Here I am!</h2>
+              <slot></slot>
+            </div>
+          </script>
+        
+
+    
+        </div>
+    
+
+
+
+<script src="app.js"></script>
+</body>
+
+</html>
