@@ -7,13 +7,9 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
 </head>
 <style>
-.header_land {
-  padding:200px;
-  text-align: center;
-  background-image: url(resources/home_header.jpeg);
-  background-size: cover;
-  color: white;
-}
+body {
+background-color: orange;
+} 
 
 </style>
 <body>
@@ -25,10 +21,21 @@
 </div>
 
 <div class="header_land">
-<h1>Welcome to Trip planner</h1>
-<h3>Home of planning your next exploration</h3>
-</div>
-</header>
+    <div class="imgcontainer">
+    <h1 style="color: chocolate;">Welcome to our Itinerary planner</h1>
+    <canvas id="myCanvas" width="800px" height="auto"style="border:3px solid black;">
+    </canvas>
+    </div>
+    </div>
+    <script>
+      var canvas = document.getElementById("myCanvas");
+      var ctx = canvas.getContext("2d");
+      ctx.font = "30px Algerian";
+      ctx.fillStyle = "black";
+      ctx.textAlign = "center";
+      ctx.fillText("Home of planning your next exploration", canvas.width/2, canvas.height/2);
+    </script>
+    </header>
 
 <div class="grid-container-mapping">
     <div class="item1">
@@ -61,7 +68,93 @@
 </div>
 
 
-
+<footer>
+    <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
+    <div id="id01" class="modal">
+    
+      <form class="modal-content animate" herf= "home_page.html" method="post">
+        <div class="imgcontainer">
+          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <img src="resources/avatar.jpg" alt="Avatar" class="avatar">
+        </div>
+    
+        <div class="container">
+          <label for="uname"><b>Username</b></label>
+          <input type="text" placeholder="Enter Username" name="uname" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+           <!-- change this link -->
+          <button type="submit"><a href ="home_page.html">Login</a></button>
+          <label>
+            <input type="checkbox" checked="checked" name="remember"> Remember me
+          </label>
+        </div>
+        <div class="container" style="background-color:#f1f1f1">
+          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+          <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>
+    
+      </form>
+    </div>
+    
+    <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
+    
+    <div id="id02" class="modal-signup">
+      <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+      <form class="modal-content-signup animate" herf = "landing_page.html">
+        <div class="container">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr>
+          <label for="email"><b>Email</b></label>
+          <input type="text" placeholder="Enter Email" name="email" required>
+    
+          <label for="psw"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="psw" required>
+    
+          <label for="psw-repeat"><b>Repeat Password</b></label>
+          <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+          
+          <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+          </label>
+    
+          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+    
+          <div class="clearfix">
+            <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+            <button type="submit"><a href ="home_page.html">Login</a></button>
+          </div>
+        </div>
+      </form>
+    </div>
+    
+    <script>
+    // Get the modal
+    var modal = document.getElementById('id01');
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+    </script>
+    
+    <script>
+      // Get the modal
+      var modal = document.getElementById('id02');
+      
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function(event) {
+        if (event.target == modal-signup) {
+          modal.style.display = "none";
+        }
+      }
+      </script>
+    <script src="app.js"></script>
+  </footer>
 <script src="app.js"></script>
 </body>
 </html>
