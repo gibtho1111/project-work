@@ -48,7 +48,7 @@ new Vue({
   }
 });
 
-Vue.component('todo-item', {
+Vue.component('itin-item', {
   template: '\
     <li>\
       {{ title }}\
@@ -58,21 +58,21 @@ Vue.component('todo-item', {
   props: ['title']
 })
 new Vue({
-  el: '#todo-list',
+  el: '#itin-list',
   data: {
     newTodoText: '',
-    todos: [
+    itins: [
 
     ],
-    nextTodoId: 4
+    nextItinId: 4
   },
   methods: {
-    addNewTodo: function () {
-      this.todos.push({
-        id: this.nextTodoId++,
-        title: this.newTodoText
+    addNewItin: function () {
+      this.itins.push({
+        id: this.nextItinId++,
+        title: this.newItinText
       })
-      this.newTodoText = ''
+      this.newItinText = ''
     }
   }
 })

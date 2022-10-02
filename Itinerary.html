@@ -40,23 +40,23 @@ background-color: orange;
 <div class="grid-container-mapping">
     <div class="item1">
     <h2>Create your personal Itinerary below:</h2>
-    <div id="todo-list">
-        <form v-on:submit.prevent="addNewTodo">
-          <label for="new-todo">Add a todo</label>
+    <div id="itin-list">
+        <form v-on:submit.prevent="addNewItin">
+          <label for="new-itin">Add a item</label>
           <input
-            v-model="newTodoText"
-            id="new-todo"
+            v-model="newItinText"
+            id="new-itin"
             placeholder="E.g. day 1: drive to Sydney"
           >
           <button>Add</button>
         </form>
         <ul>
           <li
-            is="todo-item"
-            v-for="(todo, index) in todos"
-            v-bind:key="todo.id"
-            v-bind:title="todo.title"
-            v-on:remove="todos.splice(index, 1)"
+            is="itin-item"
+            v-for="(itin, index) in itins"
+            v-bind:key="itin.id"
+            v-bind:title="itin.title"
+            v-on:remove="itins.splice(index, 1)"
           ></li>
         </ul>
       </div>
