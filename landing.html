@@ -22,8 +22,6 @@
 <h3>Home of planning your next exploration</h3>
 </div>
 
-
-
 <div class="grid-container">
     <div class="item1">
         <h1>Ready to explore?</h1>
@@ -33,7 +31,7 @@
         <p>You could however skip this if you would like to simply see our site, but we strongly recommend you sign up or login if you would like to plan trips.</p>
         <br>
 <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
-
+<!--login function-->
 <div id="id01" class="modal">
   
   <form class="modal-content animate" herf= "home_page.html" method="post">
@@ -62,7 +60,7 @@
   </form>
 </div>
 
-
+<!-- sign up function-->
 <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">Sign Up</button>
 
 <div id="id02" class="modal-signup">
@@ -95,6 +93,7 @@
   </form>
 </div>
 
+<!--script for both login and sign up buttons-->
 <script>
 
 var modal = document.getElementById('id01');
@@ -124,7 +123,7 @@ window.onclick = function(event) {
 
 </div>
 
-    <!--examples of form input bindings-->
+    <!--check box for inputs -->
     <div class="item2">
         <h1>Let's get to know you more</h1>
         <h2>Where have you ever travelled before?</h2>
@@ -137,6 +136,7 @@ window.onclick = function(event) {
             <label for="option3">Just locally</label>
           </form>
         <br>
+        
         <h2>Where would you like to go?</h2>
         <form>
             <label for="fplace">Favourite trip location:</label><br>
@@ -144,6 +144,7 @@ window.onclick = function(event) {
             
         </form>
         <br>  
+        <!--deploying the use of an app from vue.js and using v-model to store multiple lines of text inputted-->
         <div id="inputs">
         <template>
             <span>Enter what places you'd like to go next:</span>
