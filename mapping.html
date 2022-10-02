@@ -30,6 +30,7 @@ background-color: green;
 </canvas>
 </div>
 </div>
+<!--standardised canvas functions for style-->
 <script>
   var canvas = document.getElementById("myCanvas");
   var ctx = canvas.getContext("2d");
@@ -51,7 +52,7 @@ background-color: green;
   </div>
   </div>
 <!-- prop-->
-
+<!--reusing the same vue app from the landing page to allowing for trip planning-->
 <div class="item2">
   <h2>Start planing your trip below</h2>
   <div id="inputs2">
@@ -64,6 +65,7 @@ background-color: green;
 </div>
 </div>
 
+<!--setting the map loading location to australia and adjusting the zoom-->
 <script>
 function myMap() {
 var mapProp= {
@@ -73,8 +75,10 @@ var mapProp= {
 var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 </script>
+<!--loading my google api key-->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWrBK9pOqdVcfKaxHGcRqSHyUGiwXtEos&callback=myMap"></script>
 
+<!--standardised footer for login and sign up buttons-->
 <footer>
   <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
   <div id="id01" class="modal">

@@ -36,11 +36,12 @@ background-color: orange;
       ctx.fillText("Home of planning your next exploration", canvas.width/2, canvas.height/2);
     </script>
     </header>
-
+<!--creating the form for the itinerary list which relies of the itin-list vue app-->
 <div class="grid-container-mapping">
     <div class="item1">
     <h2>Create your personal Itinerary below:</h2>
     <div id="itin-list">
+        <!--how a new item is added to the list-->
         <form v-on:submit.prevent="addNewItin">
           <label for="new-itin">Add a item</label>
           <input
@@ -50,6 +51,7 @@ background-color: orange;
           >
           <button>Add</button>
         </form>
+        <!--how we remove a item from the end using the spliced function-->
         <ul>
           <li
             is="itin-item"
@@ -67,7 +69,7 @@ background-color: orange;
 
 </div>
 
-
+<!--standardised footer for login and sign up buttons-->
 <footer>
     <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Login</button>
     <div id="id01" class="modal">
